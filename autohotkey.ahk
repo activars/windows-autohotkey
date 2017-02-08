@@ -270,3 +270,27 @@ return
   LWin & [::Send {LCtrl down}{[}{LCtrl up}
   LWin & ]::Send {LCtrl down}{]}{LCtrl up}
 #if
+
+
+; #############
+; Chrome
+; #############
+#If WinActive("ahk_exe" "chrome.exe")
+  LWin & t::
+    GetKeyState, ShiftState, Shift, P
+    if (ShiftState == "D") {
+      Send {LShift down}{LCtrl down}+{t}{LShift up}{LCtrl up}
+    } else {
+      Send {LCtrl down}{t}{LCtrl up}
+    }
+  return
+
+  LWin & i::
+    GetKeyState, ShiftState, Shift, P
+    if (ShiftState == "D") {
+      Send {LShift down}{LCtrl down}+{i}{LShift up}{LCtrl up}
+    } else {
+      Send {LShift down}{LCtrl down}{i}{LShift up}{LCtrl up}
+    }
+  return
+#if
