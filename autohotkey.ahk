@@ -163,6 +163,11 @@ LWin & BS::Send {Del}
 !+Left::Send {ctrl down}{shift down}{Left}{shift up}{ctrl up}
 !+Right::Send {ctrl down}{shift down}{Right}{shift up}{ctrl up}
 
+; OSX Switch Desktop Workspace
+; ctrl + left/right => map to => Ctrl + Win + left/right
+
+LCtrl & Left::Send {LWin down }{LCtrl down}{Left}{LWin up}{LCtrl up}
+LCtrl & Right::Send {LWin down }{LCtrl down}{Right}{LWin up}{LCtrl up}
 
 ; DISABLES UNMODIFIED WIN-KEY IN FAVOR OF OSX SPOTLIGHT-LIKE BEHAVIOR
 LWin::return
@@ -230,13 +235,6 @@ LWin & 4::
   }
 return
 
-; ##################
-; ConEmu64 -> iTerm2
-; ##################
-#If WinActive("ahk_exe" "ConEmu64.exe")
-    LWin & w::Send {LWin down}{LAlt down}{Delete}{LWin up}{LAlt up}
-#if
-
 
 ; #############
 ; Sublime Text
@@ -259,6 +257,16 @@ return
     }
   return
 
+  LWin & p::
+    GetKeyState, ShiftState, Shift, P
+    if (ShiftState == "D") {
+      Send {LShift down}{LCtrl down}+{p}{LShift up}{LCtrl up}
+    } else {
+      Send {LShift down}{LCtrl down}{p}{LShift up}{LCtrl up}
+    }
+  return
+  
+  LWin & t::Send {LCtrl down}{p}{LCtrl up}
   LWin & [::Send {LCtrl down}{[}{LCtrl up}
   LWin & ]::Send {LCtrl down}{]}{LCtrl up}
 #if
