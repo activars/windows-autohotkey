@@ -294,3 +294,52 @@ return
     }
   return
 #if
+
+
+;##########
+;ConsoleZ2 Mapping to iTerm shortcut
+;##########
+
+#If WinActive("ahk_exe" "Console.exe")
+  ; new tab
+  LWin & t::Send {LCtrl down}{f1}{LCtrl up}
+
+  ; switch next
+  LWin & ]::
+    GetKeyState, ShiftState, Shift, P
+    if (ShiftState == "D") {
+
+      ; switch to next tab
+      Send {LCtrl down}+{Tab}{LCtrl up}
+    } else {
+
+      ; switch to next view
+      Send {LCtrl down}{PgDn}{LCtrl up}
+    }
+  return
+
+  ; switch to previous
+  LWin & [::
+    GetKeyState, SiftState, Shift, P
+    if (ShiftState == "D") {
+
+      ; switch to previous tab
+      Send {LCtrl down}{LShift down}+{Tab}{LCtrl up}{LShift up}
+    } else {
+
+      ; switch previous view
+      Send {LCtrl down}{PgUp}{LCtrl up}
+    }
+  return
+
+  LWin & d::
+    GetKeyState, SiftState, Shift, P
+    if (ShiftState == "D") {
+      ; Split Windows Horizontally
+      Send {LCtrl down}{LShift down}{o}{LShift up}{LCtrl up}
+    } else {
+      ; Split Windows Vertically
+      Send {LCtrl down}{LShift down}{e}{LShift up}{LCtrl up}
+    }
+  return 
+#If
