@@ -9,4 +9,4 @@ Supported Applicaitons:
  - ConsoleZ2 (mapping keys to iTerm2)
   - 
  - GreenShot (mapping keys to default MacOS screenshot behaviour)
-  - 
+  - <kbd>win</kbd>+<kbd>shift</kbd>+<kbd>4</kbd>
