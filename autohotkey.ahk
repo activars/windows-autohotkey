@@ -186,6 +186,20 @@ LWin & Down::
 return
 
 
+; **********
+; Greenshot
+; **********
+
+LWin & 4::
+ GetKeyState, ShiftState, Shift, P
+  if (ShiftState == "D") {
+    Send {PrintScreen}
+  } else {
+    Send {4}
+  }
+return
+
+
 ; ************
 ;   IntelliJ
 ; ************
@@ -330,3 +344,4 @@ return
     }
   return 
 #If
+
