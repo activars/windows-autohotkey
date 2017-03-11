@@ -6,5 +6,7 @@ Supported Applicaitons:
  - IntelliJ IDEA
  - Google Chrome
  - Sublime Text
- - ConsoleZ2
- - GreenShot
+ - ConsoleZ2 (mapping keys to iTerm2)
+  - 
+ - GreenShot (mapping keys to default MacOS screenshot behaviour)
+  - 
