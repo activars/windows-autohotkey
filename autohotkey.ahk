@@ -1,10 +1,5 @@
 ; Autohotkey script to translate some Mac shortcuts for Windows
-; Use Alt key instead of control key (Alt key is at the same place of Cmd on Mac)
-;
 ; Use ScrollLock key to temporary activate / descativate the current script, in case of get some trouble
-; Added some Mac specific shortcuts like Alt+Shift+Right, Alt+Shift+Left or Cmd+Shift+L
-;
-; Work only with left Alt and left Control keys
 
 #UseHook
 #InstallKeybdHook
