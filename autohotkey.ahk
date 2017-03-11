@@ -1,29 +1,16 @@
-;Autohotkey script to translate some Mac shortcuts for Windows
-;Use Alt key instead of control key (Alt key is at the same place of Cmd on Mac)
-;On Mac all hotkeys often used are: cmd+c, cmd+v, ... -> ctrl+c, ctrl+v, ... (on PC)
-;Use ScrollLock key to temporary activate / descativate the current script, in case of get some trouble
-;Added some Mac specific shortcuts like Alt+Shift+Right, Alt+Shift+Left or Cmd+Shift+L
-;Work only with left Alt and left Control keys
+; Autohotkey script to translate some Mac shortcuts for Windows
+; Use Alt key instead of control key (Alt key is at the same place of Cmd on Mac)
+;
+; Use ScrollLock key to temporary activate / descativate the current script, in case of get some trouble
+; Added some Mac specific shortcuts like Alt+Shift+Right, Alt+Shift+Left or Cmd+Shift+L
+;
+; Work only with left Alt and left Control keys
 
 #UseHook
 #InstallKeybdHook
 
 SC056::`
 +SC056::~
-
-;Console - ctrl+v : past
-;if WinActive("ahk_class ConsoleWindowClass")
-;  ^v::SendInput {Raw}%clipboard% return
-
-;Desktop or explorer - ctrl+n : new window
-;if WinActive("ahk_class Progman") or WinActive("ahk_class ExploreWClass") or WinActive("ahk_class CabinetWClass")
-;  ^N::Run explorer return
-
-;Desktop or explorer - ctrl+shift+n : new folder
-;if WinActive("ahk_class Progman") or WinActive("ahk_class ExploreWClass") or WinActive("ahk_class CabinetWClass")
-;  !+n::Send !fwf; English: File > New > Folder
-;  !+n::Send !fnd; French: Fichier > Nouveau > Dossier
-
 
 LWin & a::Send {LCtrl Down}{a}{LCtrl Up}
 LWin & b::Send {LCtrl Down}{b}{LCtrl Up}
@@ -179,12 +166,6 @@ RWin::return
 LWin & Tab::AltTab
 !Tab::return
 
-; TODO HOW TO SEND LOCK SCREEN!?!
-; ctrl alt del
-^#Del::
-  Send {LCtrl down}{LAlt down}{Del}{LAlt up}{LCtrl up}
-return
-
 ; Explorer: Jump to parent dir
 LWin & Up::
  GetKeyState, ShiftState, Shift, P
@@ -209,31 +190,37 @@ return
 ;   IntelliJ
 ; ************
 ; self defined keymap for IntelliJ 'VCS Operations Popup'
-LWin & \::Send {LAlt Down}{\}{LAlt Up}
-^#F7::Send {LCtrl down}{LAlt down}{F7}{LAlt up}{LCtrl up}
-LWin & F8::Send {LAlt Down}{F8}{LAlt Up}
 
-; IJ Organize Imports
-LCtrl & o::
-  if (GetKeyState("LWin", "P")) {
-    Send {LCtrl Down}{LAlt Down}{o}{LAlt Up}{LCtrl Up}
-  } else {
-    Send {LCtrl Down}{o}{LCtrl Up}
-  }
-return
+#If WinActive("ahk_exe" "idea.exe")
+  LWin & \::Send {LAlt Down}{\}{LAlt Up}
+  ^#F7::Send {LCtrl down}{LAlt down}{F7}{LAlt up}{LCtrl up}
+  LWin & F8::Send {LAlt Down}{F8}{LAlt Up}
 
-; import methods
-LWin & Enter::Send {LAlt down}{Enter}{LAlt up}
+  ;Inline Comments
+  LWin & /::Send {LCtrl Down}}{/}{LCtrl Up} 
 
-; private snagit shortcut
-LWin & 4::
- GetKeyState, ShiftState, Shift, P
-  if (ShiftState == "D") {
-    Send {LAlt down}+{4}{LAlt up}
-  } else {
-    Send {LAlt down}{4}{LAlt up}
-  }
-return
+  ; IJ Organize Imports
+  LCtrl & o::
+    if (GetKeyState("LWin", "P")) {
+      Send {LCtrl Down}{LAlt Down}{o}{LAlt Up}{LCtrl Up}
+    } else {
+      Send {LCtrl Down}{o}{LCtrl Up}
+    }
+  return
+
+  ; import methods
+  LWin & Enter::Send {LAlt down}{Enter}{LAlt up}
+
+  ; private snagit shortcut
+  LWin & 4::
+   GetKeyState, ShiftState, Shift, P
+    if (ShiftState == "D") {
+      Send {LAlt down}+{4}{LAlt up}
+    } else {
+      Send {LAlt down}{4}{LAlt up}
+    }
+  return
+#If
 
 
 ; #############
