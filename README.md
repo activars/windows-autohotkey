@@ -9,5 +9,5 @@ Supported Applicaitons:
  - ConsoleZ2 (mapping keys to iTerm2)
  - Hyper.is (This is a lot similar to iTerm2, recommended).
  - GreenShot (mapping keys to default MacOS screenshot behaviour)
-   - <kbd>win</kbd>+<kbd>shift</kbd>+<kbd>4</kbd>, popup actions after you take the screenshot
+   - <kbd>win</kbd>+<kbd>shift</kbd>+<kbd>4</kbd>, popup actions after taking the screenshot
 
