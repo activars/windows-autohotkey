@@ -12,8 +12,14 @@ Supported Applicaitons:
    - <kbd>win</kbd>+<kbd>shift</kbd>+<kbd>t</kbd> Open Previous Tab
    - <kbd>win</kbd>+<kbd>shift</kbd>+<kbd>i</kbd> Open Inspector
  - Sublime Text
- - ConsoleZ2 (mapping keys to iTerm2)
- - Hyper.is (This is a lot similar to iTerm2, recommended).
+   - <kbd>win</kbd>+<kbd>shift</kbd>+<kbd>p</kbd> Open Package Mananger
+   - <kbd>win</kbd>+<kbd>t</kbd> Open file search
+   - <kbd>win</kbd>+<kbd>/</kbd> Comment or uncomment selection of code
+ - Hyper.is
+   - Similar to iTerm2, recommended
  - GreenShot (mapping keys to default MacOS screenshot behaviour)
    - <kbd>win</kbd>+<kbd>shift</kbd>+<kbd>4</kbd>, popup actions after taking the screenshot
+ - Wox launcher
+   - This offers similar Alfred quick search
+ 
 
