@@ -15,6 +15,7 @@ Supported Applicaitons:
    - <kbd>win</kbd>+<kbd>shift</kbd>+<kbd>p</kbd> Open Package Mananger
    - <kbd>win</kbd>+<kbd>t</kbd> Open file search
    - <kbd>win</kbd>+<kbd>/</kbd> Comment or uncomment selection of code
+   - <kbd>win</kbd>+<kbd>d</kbd> Select text with the same value
  - Hyper.is
    - Similar to iTerm2, recommended
  - GreenShot (mapping keys to default MacOS screenshot behaviour)
