@@ -7,6 +7,7 @@ Supported Applicaitons:
  - Google Chrome
  - Sublime Text
  - ConsoleZ2 (mapping keys to iTerm2)
-  - 
+ - Hyper.is (This is a lot similar to iTerm2, recommended).
  - GreenShot (mapping keys to default MacOS screenshot behaviour)
-  - <kbd>win</kbd>+<kbd>shift</kbd>+<kbd>4</kbd>
+   - <kbd>win</kbd>+<kbd>shift</kbd>+<kbd>4</kbd>
+
