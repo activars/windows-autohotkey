@@ -3,6 +3,8 @@
 This tries to convert shortcut key on Winodws to MacOS shortcuts. 
 
 Supported Applicaitons:
+ - Windows OS
+   - <kbd>win</kbd> Disable the Windows menu completely
  - IntelliJ IDEA
  - Google Chrome
    - <kbd>win</kbd>+<kbd>shift</kbd>+<kbd>n</kbd> Open Tab with Incogonito
